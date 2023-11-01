@@ -12,6 +12,7 @@ import 'package:get/get.dart';
 
 import '../remote/todo_api.dart';
 
+// with StateMixin
 class TodoData extends GetxController {
   final RxList<Todo> todoList = <Todo>[].obs;
   final RxBool isLoaded = false.obs;
@@ -40,7 +41,7 @@ class TodoData extends GetxController {
 
   void addTodo(BuildContext context) async {
     final result = await WriteTodoBottomSheet().show();
-    result?.runIfSuccess((data) async{
+    result?.runIfSuccess((data) async {
       final newTodo = Todo(
         id: newId,
         title: data.title,

@@ -31,6 +31,7 @@ class ApiError {
             message: '통신상태를 확인해주세요.', networkErrorType: NetworkErrorType.networkConnectionError));
       }
 
+      // kReleaseMode: 릴리즈 모드 일때, true
       if (!kReleaseMode) {
         return SimpleResult.failure(ApiError(
             message: e.error?.toString() ?? e.message ?? 'message is empty',
